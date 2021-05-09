@@ -5,6 +5,8 @@ import Statistics from "./components/statistics/Statistics";
 import Loader from "react-loader-spinner"
 import axios from './axios'
 import mapboxgl from "mapbox-gl"
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 export default function App() {
