@@ -1,0 +1,29 @@
+.title{
+    text-align: center;
+}
+
+.subtitle{
+    text-align: center;
+}
+
+.labels-group{
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+}
+
+.confirmed{
+    color: #3385ff;
+}
+
+.deaths{
+    color: #ff1a1a;
+}
+
+.recovered{
+    color: #00e600;
+}
+
+.number{
+    font-weight: 700;
+}

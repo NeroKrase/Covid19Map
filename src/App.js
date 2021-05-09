@@ -1,25 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from "react"
+import Map from "./components/map/Map"
+import Statistics from "./components/statistics/Statistics";
+import Loader from "react-loader-spinner"
+import axios from './axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+
+    const [data, setData] = useState({});
+
+    useEffect(() => {
+        async function fetchData() {
+            const request = await axios.get('summary');
+            setData(request.data)
+            console.log(request.data)
+            return request
+        }
+        fetchData()
+    }, [])
+
+    if (Object.keys(data).length === 0) {
+        return <Loader className="loader" type="BallTriangle" color="#00BFFF" height={100} width={100} timeout={3000}/>
+    } else {
+        return (
+            <div>
+                <Statistics global={data.Global}/>
+                <div className="map-container">
+                    <Map countries={data.Countries}/>
+                </div>
+            </div>
+        )
+    }
 }
-
-export default App;
