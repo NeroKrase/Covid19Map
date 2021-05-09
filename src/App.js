@@ -4,6 +4,8 @@ import Map from "./components/map/Map"
 import Statistics from "./components/statistics/Statistics";
 import Loader from "react-loader-spinner"
 import axios from './axios'
+import mapboxgl from "mapbox-gl"
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 export default function App() {
 
