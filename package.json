@@ -12,7 +12,8 @@
     "react-loader-spinner": "^4.0.0",
     "react-map-gl": "^6.1.11",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.1"
+    "web-vitals": "^1.1.1",
+    "worker-loader": "^3.0.8"
   },
   "scripts": {
     "start": "react-scripts start",
